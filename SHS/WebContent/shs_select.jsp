@@ -148,7 +148,7 @@
 		</div>
 	</div>
 	<div class="content">
-		<a href="index.jsp">
+		<a href="index.shs">
 			<div class="shs_title">
 				JAVA기반 스마트하이브리드<br>
 				개발자 과정 2기

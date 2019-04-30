@@ -70,7 +70,7 @@
 </head>
 <body>
 	<div class="content">
-		<a href="index.jsp">
+		<a href="index.shs">
 			<div class="shs_title">
 				JAVA기반 스마트하이브리드<br>
 				개발자 과정 2기
@@ -82,10 +82,10 @@
 		<div class="container">
 			<div class="div_index">
 				<!-- get, post를 입력안해주면 get으로 감 -->
-				<a href="SHSInsert" class="btn_index btn1">학생등록</a>
+				<a href="insert.shs" class="btn_index btn1">학생등록</a>
 			</div>
 			<div class="div_index">
-				<a href="SHSSelect" class="btn_index btn2">출석부</a>
+				<a href="select.shs" class="btn_index btn2">출석부</a>
 			</div>
 			<div class="div_index">
 				<a href="#" class="btn_index btn3">만든이</a>

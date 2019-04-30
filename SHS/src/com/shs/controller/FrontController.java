@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.shs.action.Action;
 import com.shs.action.ActionForward;
 import com.shs.action.IndexAction;
+import com.shs.action.InsertAction;
+import com.shs.action.InsertPlayAction;
+import com.shs.action.WelcomeAction;
 
 // FrontController 패턴
 // : 앞단에서 Controller 역할을 하는 Servlet 1개만 생성 후
@@ -43,17 +46,34 @@ public class FrontController extends HttpServlet {
 		String command = uri.substring(ctx.length());
 		// uri에서 ctx의 길이만큼 빼면 내가 원하는 소스만 뽑을 수 있다.
 		
-		System.out.println("uri >>> " + uri);
-		System.out.println("ctx >>> " + ctx);
-		System.out.println("cmd >>> " + command);
+//		System.out.println("uri >>> " + uri);
+//		System.out.println("ctx >>> " + ctx);
+//		System.out.println("cmd >>> " + command);
 		System.out.println("페이지 이동 ===> " + command);
 		
-		if(command.contentEquals("/index.shs")) {
+		if(command.equals("/index.shs")) {
+			
 			// 실제로 동작은 IndexAction()에서 하므로 보내준 값을 모르기 때문에 request를 보내줘야 함
-			action = new IndexAction();
+			action = new IndexAction(); // 객체 생성
 			forward = action.execute(request, response);
+			
+		} else if(command.equals("/insert.shs")) {
+			
+			action = new InsertAction();
+			forward = action.execute(request, response);
+			
+			//Play가 붙어있으면 실제로 동작하기로 함
+		} else if(command.equals("/insertPlay.shs")) {
+			
+			action = new InsertPlayAction();
+			forward = action.execute(request, response);
+			
+		} else if(command.equals("/welcome.shs")) {
+			
+			action = new WelcomeAction();
+			forward = action.execute(request, response);
+			
 		}
-		
 		
 		// ---------------------- 공통 분기 작업 ----------------------
 		if (forward != null) {

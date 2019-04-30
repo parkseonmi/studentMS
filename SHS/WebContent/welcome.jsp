@@ -109,7 +109,7 @@ ul {
 <body>
 	<div class="content">
 		<div class="shs_title">
-			<a href="index.jsp">
+			<a href="index.shs">
 				JAVA기반 스마트하이브리드<br> 개발자 과정 2기
 			</a>
 		</div>
@@ -126,7 +126,7 @@ ul {
 		function countDown() {
 			if (cnt == 0) {
 				clearInterval(s);
-				location.href = "index";
+				location.href = "index.shs";
 			}
 			document.getElementById("rCnt").innerHTML = cnt;
 			cnt--;
