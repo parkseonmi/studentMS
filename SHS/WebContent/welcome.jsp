@@ -5,28 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>welcome페이지</title>
+<link rel="stylesheet" href="css/common.css">
 <style type="text/css">
 @import url('https://fonts.googleapis.com/css?family=Song+Myung');
-
-* {
-	font-family: 'Song Myung', serif;
-	box-sizing: border-box;
-}
-
-body, ul {
-	margin: 0;
-	padding: 0;
-}
-
-a {
-	color: inherit;
-	text-decoration: none;
-}
-
-ul {
-	list-style: none;
-}
-
 .content {
 	width: 390px;
 	height: 600px;
@@ -108,11 +89,7 @@ ul {
 </head>
 <body>
 	<div class="content">
-		<div class="shs_title">
-			<a href="index.shs">
-				JAVA기반 스마트하이브리드<br> 개발자 과정 2기
-			</a>
-		</div>
+		<%@ include file="include/header.jsp" %>
 		<div class="shs_manager">- 환영합니다 -</div>
 		<div class="container">
 			<div class="welcome_text text1">등록해주셔서 감사합니다!</div>

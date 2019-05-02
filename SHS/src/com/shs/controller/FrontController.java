@@ -14,6 +14,7 @@ import com.shs.action.ActionForward;
 import com.shs.action.IndexAction;
 import com.shs.action.InsertAction;
 import com.shs.action.InsertPlayAction;
+import com.shs.action.NameAction;
 import com.shs.action.WelcomeAction;
 
 // FrontController 패턴
@@ -71,6 +72,11 @@ public class FrontController extends HttpServlet {
 		} else if(command.equals("/welcome.shs")) {
 			
 			action = new WelcomeAction();
+			forward = action.execute(request, response);
+			
+		} else if(command.equals("/name.shs")) {
+			
+			action = new NameAction();
 			forward = action.execute(request, response);
 			
 		}
