@@ -187,7 +187,7 @@ tr {
 			<c:if test="${search_cnt > 0}">
 				 <span class="search_result">
 				 	<span class="point">"${name}"</span>으로 검색한 결과 총
-				 	<span class="cnt">${search_cnt}</span>건이 검색됨.
+				 	<span class="cnt">${search_cnt}</span>건이 검색됨!
 				 </span>
 			 </c:if>
 		</div>
