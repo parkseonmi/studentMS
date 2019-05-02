@@ -128,4 +128,29 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	
+	// 학생검색(이름)
+	public List<MemberDTO> memSearch(String name) {
+		
+		List<MemberDTO> list = null;
+		sqlSession = sqlSessionFactory.openSession();
+		
+		 try {
+			 
+			list = sqlSession.selectList("memSearch", name);
+			
+			for (MemberDTO memberDTO : list) {
+				System.out.print(memberDTO.getSid() + ", ");
+				System.out.print(memberDTO.getSname() + ", ");
+				System.out.print(memberDTO.getSphone());
+				System.out.println();
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
+		 return list;
+	}
 }

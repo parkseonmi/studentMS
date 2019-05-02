@@ -15,6 +15,8 @@ import com.shs.action.IndexAction;
 import com.shs.action.InsertAction;
 import com.shs.action.InsertPlayAction;
 import com.shs.action.NameAction;
+import com.shs.action.SearchAction;
+import com.shs.action.SearchPlayAction;
 import com.shs.action.WelcomeAction;
 
 // FrontController 패턴
@@ -77,6 +79,16 @@ public class FrontController extends HttpServlet {
 		} else if(command.equals("/name.shs")) {
 			
 			action = new NameAction();
+			forward = action.execute(request, response);
+			
+		} else if(command.equals("/search.shs")) {
+			
+			action = new SearchAction();
+			forward = action.execute(request, response);
+			
+		} else if(command.equals("/searchPlay.shs")) {
+			
+			action = new SearchPlayAction();
 			forward = action.execute(request, response);
 			
 		}

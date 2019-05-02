@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>welcome페이지</title>
-<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/common.css?v=1">
 <style type="text/css">
 @import url('https://fonts.googleapis.com/css?family=Song+Myung');
 .content {

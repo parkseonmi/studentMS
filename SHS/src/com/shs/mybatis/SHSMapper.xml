@@ -36,4 +36,12 @@
 		DELETE FROM shsmember
 		WHERE sid = #{id}
 	</delete>
+	
+	<!-- ![CDATA[ : sql이 아닌 데이터로 인식하게 함 -->
+	<select id="memSearch" parameterType="String" resultType="MemberDTO">
+		<![CDATA[
+			SELECT * FROM shsmember
+			WHERE sname LIKE '%'||#{name}||'%'
+		]]>
+	</select>
 </mapper>

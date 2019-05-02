@@ -114,72 +114,83 @@ tr {
 .dBtn {
 	color: tomato;
 }
-
-.modal_all {
-	display: none;
-	position: absolute;
-	justify-content: center;
-	background: rgba(0, 0, 0, 0.3);
-	top: 0;
-	left: 0;
+.search_wrap {
+	margin-bottom: 15px;
 	width: 100%;
-	height: 100%;
+	height: 40px;
+	position: relative;
 }
+.input_search {
+	height: 100%;
+	padding: 0 20px;
+	border: 2.5px solid mediumpurple;
+	outline: none;
+	color: #515151;
+	width: 100%;
+	font-size: 16px;
+	border-radius: 50px;
 
-.modal_wrap {
-	font-size: 20px;
+	
+}
+.search_btn {
+	display: inline-flex;
+	width: 40px;
+	height: 100%;
+	background-color: mediumpurple;
+	font-size: 17px;
 	position: absolute;
-	z-index: 100;
-	top: 247px;
-	width: 240px;
-	height: 200px;
-	background: white;
+	top: 0;
+	right: 0;
+	border-radius: 50%;
+	transition: .3s;
+}
+.search_btn:hover {
 	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0
 		rgba(0, 0, 0, 0.12);
-	border: 2px solid #444;
-	border-radius: 5px;
-	text-align: center;
-	padding-top: 40px;
+	background: slateblue;
 }
-
-.alert_wrap {
-	display: inline-block;
-	width: 80px;
-	height: 45px;
-	font-size: 16px;
+.search_btn i {
+	font-size: 20px;
 	color: white;
-	border-radius: 5px;
-	line-height: 45px;
-	margin-top: 15px;
+	line-height: 40px;
+	margin: 0 auto;
 }
-
-.alert_wrap_no {
-	background-color: yellowgreen;
-	margin-right: 10px;
+.search_result {
+	color: hotpink;
+	font-size: 15px;
+	padding-left: 10px;
 }
-
-.alert_wrap_yes {
-	background-color: salmon;
+.err_msg {
+	display: none;
+	color: tomato;
+	margin-top: -12px;
+	padding-left: 10px;
 }
-
-.name {
-	color: dodgerblue;
+.point {
+	color : dodgerblue;
 }
 </style>
 </head>
 <body>
-	<div class="modal_all">
-		<div class="modal_wrap">
-			<div>
-				"<span class="name"></span>"학생을<br>삭제하시겠습니까?
-			</div>
-			<a href="#" class="alert_wrap alert_wrap_no">아니요</a> <a href="#"
-				class="alert_wrap alert_wrap_yes">예</a>
-		</div>
-	</div>
 	<div class="content">
 		<%@ include file="include/header.jsp"%>
-		<div class="shs_manager">- 출석부 -</div>
+		<div class="shs_manager">- 학생검색 -</div>
+		<div class="in_content">
+			<div class="search_wrap">
+				<input type="text" placeholder="검색할 이름을 입력해주세요."
+				id="input_search" name="input_search" class="input_search" maxlength="4">
+				<a href="#" class="search_btn"><i class="fas fa-search"></i></a>
+			</div>
+			<span class="err_msg"></span>
+		</div>
+		<div class="in_content">
+			<c:if test="${search_cnt > 0}">
+				 <span class="search_result">
+				 	<span class="point">"${name}"</span>으로 검색한 결과 총
+				 	<span class="cnt">${search_cnt}</span>건이 검색됨.
+				 </span>
+			 </c:if>
+		</div>
 		<div class="in_content">
 			<table>
 				<tr class="table_title">
@@ -191,7 +202,7 @@ tr {
 				</tr>
 				<c:if test="${shslist.size() == 0}">
 					<tr class="table_data">
-						<td colspan="5">등록된 학생이 없습니다.</td>
+						<td colspan="5">검색결과가 없습니다.</td>
 					</tr>
 				</c:if>
 				<!-- jstl태그, el태그: jsp에서 자바코드를 가독성이 좋게 쓸 수 있음
@@ -239,6 +250,39 @@ tr {
 
 			$(".alert_wrap_yes").click(function() {
 				location.href = "SHSDelete?id=" + id;
+			});
+			
+			
+			// 학생 검색버튼 클릭 시!
+			$(".search_btn").click(function(){
+				var name = $.trim($("#input_search").val());
+				
+				var regEmpty = /\s/g; // 공백문자 체크
+				var regNum = /[~0-9]/g; // 숫자 못들어오게 체크
+				// isNaN:매개변수가 숫자가 아닐 때(Not a Number)
+				
+				if (name == '' || name.length == 0) {
+					$('.err_msg').css('display','block')
+									   .css('color', 'tomato')
+									   .text('필수 정보입니다.');
+					return false;
+				} else if (regNum.test(name)) {
+					$('.err_msg').css('display','block')
+									   .css('color', 'tomato')
+					   				   .text('문자만 입력해주세요.');
+					return false;
+				} else if (name.match(regEmpty)) {
+					$('.err_msg').css('display','block')
+									   .css('color', 'tomato')
+					   				   .text('공백없이 작성해주세요.');
+					return false;
+				} else if (name.length > 4 || name.length < 2) {
+					$('.err_msg').css('display','block')
+									   .css('color', 'tomato')
+					  				   .text('2~4글자로만 작성해주세요.');
+					return false;
+				}
+				location.href="searchPlay.shs?name=" + name;
 			});
 		});
 	</script>

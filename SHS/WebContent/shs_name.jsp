@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>welcome페이지</title>
-<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/common.css?v=1">
 <style type="text/css">
 .content {
 	width: 390px;
@@ -46,7 +46,7 @@
 .made {
 	font-size: 14px;
 	text-align: left;
-	margin: 0 0 50px 150px;
+	margin: 0 0 40px 150px;
 }
 
 .name_text:nth-child(1)>span {
@@ -62,7 +62,7 @@
 }
 
 .btn_index {
-	padding: 15px 12px;
+	padding: 12px 12px;
 	color: white;
 	width: 120px;
 	display: inline-block;
@@ -85,7 +85,8 @@
 }
 
 .container_text {
-	width: 300px;
+	font-size: 16px;
+	width: 310px;
 	height: 66px;
 	background: white;
 	border: 2px solid #444;
@@ -118,9 +119,6 @@
 		<div class="made">
 			<div class="name_text">
 				<span>NAME : </span>Park Seon mi
-			</div>
-			<div class="name_text">
-				<span>PHONE : </span>010-8850-7667
 			</div>
 			<div class="name_text">
 				<span>MAIL : </span>seonmi0325@gmail.com

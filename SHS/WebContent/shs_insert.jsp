@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>학생등록</title>
-<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/common.css?v=1">
 <style type="text/css">
 .content {
 	width: 390px;
