@@ -3,6 +3,8 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shs.mybatis.SHSMapper.xml">
+
+<!-- (13) MemberDAO의 memInsert()메서드에서 보내준 mDto값을 바인딩변수로 채우고 SQL문을 실행(DB가서 동작해라) -->
 	<insert id="memInsert">
 		INSERT INTO shsmember(sid, sname, sage, smajor, sphone)
 		VALUES(seq_shsmember_sid.NEXTVAL, #{sname}, #{sage}, #{smajor}, #{sphone})

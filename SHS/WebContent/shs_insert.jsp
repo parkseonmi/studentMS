@@ -140,6 +140,9 @@
 			<div class="div_index btn_wrap">
 				<a href="index.shs" class="btn_index btn3">취소</a>
 				<!-- <a href="#" class="btn_index btn1 submitBtn">등록</a> -->
+				
+				<!-- (1) button 클릭시 jQuery의 click() 이벤트 발생
+						jQuery click() 이벤트 function()으로 이동 -->
 				<button type="submit" class="btn_index btn1 submitBtn">등록</button>
 			</div>
 		</form>
@@ -177,7 +180,8 @@
 
 			// 등록버튼 클릭시 form태그 안에 있는 input태그의 값을 servlet으로 전송
 			$('.submitBtn').click(function() {
-
+				
+				// (2) 유효성 체크 시작!
 				if (!nameCheck()) {
 					$('#input_name').focus();
 					return false;
@@ -194,8 +198,14 @@
 					$('#input_phone').focus();
 					return false;
 				}
-				// ----------유효성체크 완료----------
-				// ----------: 유효한 값만 있음----------
+
+				// (3) 유효성 체크 완료: 모두 유효한 값으로 판명
+				//	#frm_insert 속성을 가진 form태그를 submit()함
+				// * submit 동작
+				// * Method = POST
+				// * Action = "insertPlay.shs"
+				// * form태그 내부에 있는 input태그들의 value(입력한 값)를
+				// * POST방식으로 insertPlay.shs(FrontController)로 전송
 
 				// form태그의 action주소로 method방식을 통하여 데이터를 전송
 				// Action: SHSInsert(Servlet)

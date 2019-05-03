@@ -19,7 +19,7 @@
 }
 
 .shs_title {
-	padding: 60px 0 25px;
+	padding: 40px 0 20px;
 	text-align: center;
 	font-size: 27px;
 	color: #444;
@@ -33,7 +33,7 @@
 }
 
 .title2 {
-	padding: 60px 0 25px;
+	padding: 40px 0 10px;
 }
 
 .container {
@@ -43,10 +43,32 @@
 	justify-content: center;
 }
 
+.introduce_text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 390px;
+	 	margin-bottom: 25px;
+}
+.introduce_img {
+	display: inline-block;
+ 	width: 120px;
+ 	height: 120px;
+ 	border-radius: 50%;
+ 	overflow: hidden;
+ 	border: 5px solid white;
+ 	
+}
+.introduce_img > img {
+	width: 190px;
+	margin-left: -35px;
+	margin-top: -15px;
+}
+
 .made {
 	font-size: 14px;
 	text-align: left;
-	margin: 0 0 40px 150px;
+	margin: 0 0 0 20px;
 }
 
 .name_text:nth-child(1)>span {
@@ -54,11 +76,9 @@
 }
 
 .name_text:nth-child(2)>span {
+	display: inline-block;
 	color: dodgerblue;
-}
-
-.name_text:nth-child(3)>span {
-	color: orange;
+	margin-top: 10px;
 }
 
 .btn_index {
@@ -116,12 +136,17 @@
 			</div>
 		</div>
 		<div class="shs_manager title2">- 만든이 -</div>
-		<div class="made">
-			<div class="name_text">
-				<span>NAME : </span>Park Seon mi
+		<div class="introduce_text">
+			<div class="introduce_img">
+				<img src="img/1.jpg">
 			</div>
-			<div class="name_text">
-				<span>MAIL : </span>seonmi0325@gmail.com
+			<div class="made">
+				<div class="name_text">
+					<span>NAME</span><br>Park Seon mi
+				</div>
+				<div class="name_text">
+					<span>MAIL</span><br>seonmi0325@gmail.com
+				</div>
 			</div>
 		</div>
 		<div class="div_index">

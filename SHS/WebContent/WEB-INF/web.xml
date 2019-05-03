@@ -10,11 +10,16 @@
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
+  <!-- 3. FrontController로 이동 = com.shs.controller.FrontController 이동 -->
   <!-- FrontController는 com.shs.controller.FrontController이다! -->
   <servlet-name>FrontController</servlet-name>
   <servlet-class>com.shs.controller.FrontController</servlet-class>
   </servlet>
   <servlet-mapping>
+  <!-- 2. 값: insert.shs
+  	if(값의 끝부분이 .shs로 끝나면) {
+  		FrontController로 이동
+  	} -->
   <!-- *.shs로 끝나면 FrontController로 가라, .shs는 아무거나 된다. -->
   <servlet-name>FrontController</servlet-name>
   <url-pattern>*.shs</url-pattern>

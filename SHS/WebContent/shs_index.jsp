@@ -84,6 +84,7 @@
 					<a href="search.shs" class="btn_index btn4">학생검색</a>
 				</div>
 				<div class="div_index">
+				<!-- 1. [insert.shs] URL을 가지고 web.xml로 이동 -->
 					<a href="insert.shs" class="btn_index btn1">학생등록</a>
 				</div>
 			</div>
