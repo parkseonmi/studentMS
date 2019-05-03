@@ -43,6 +43,8 @@
 	display: inline-block;
 	border-radius: 10px;
 	font-size: 17px;
+	border: 0;
+	cursor: pointer;
 }
 
 .btn_index:hover {
@@ -117,7 +119,7 @@ hr {
 	<div class="content">
 		<%@ include file="include/header.jsp"%>
 		<div class="shs_manager">- 학사수정 -</div>
-		<form action="SHSUpdate" id="frm_update" name="frm_insert"
+		<form action="updatePlay.shs" id="frm_update" name="frm_insert"
 			method="POST">
 			<div class="in_content">
 				<hr>
@@ -153,8 +155,9 @@ hr {
 				</div>
 			</div>
 			<div class="div_index btn_wrap">
-				<a href="SHSSelect" class="btn_index btn3">취소</a> <a href="#"
-					class="btn_index btn1 submitBtn">수정</a>
+				<a href="SHSSelect" class="btn_index btn3">취소</a>
+				<!-- <a href="#" class="btn_index btn1 submitBtn">수정</a> -->
+				<button type="submit" class="btn_index btn1 submitBtn">수정</button>
 			</div>
 		</form>
 	</div>
