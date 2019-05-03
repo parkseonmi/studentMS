@@ -41,6 +41,8 @@
 	display: inline-block;
 	border-radius: 10px;
 	font-size: 17px;
+	border: none;
+	cursor: pointer;
 }
 
 .btn_index:hover {
@@ -136,8 +138,9 @@
 				</div>
 			</div>
 			<div class="div_index btn_wrap">
-				<a href="index.shs" class="btn_index btn3">취소</a> <a href="#"
-					class="btn_index btn1 submitBtn">등록</a>
+				<a href="index.shs" class="btn_index btn3">취소</a>
+				<!-- <a href="#" class="btn_index btn1 submitBtn">등록</a> -->
+				<button type="submit" class="btn_index btn1 submitBtn">등록</button>
 			</div>
 		</form>
 	</div>

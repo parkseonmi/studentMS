@@ -73,7 +73,7 @@
 			<div class="line1">
 				<div class="div_index">
 				<!-- get, post를 입력안해주면 get으로 감 -->
-					<a href="name.shs" class="btn_index btn3">소개</a>
+					<a href="introduce.shs" class="btn_index btn3">소개</a>
 				</div>
 				<div class="div_index">
 					<a href="select.shs" class="btn_index btn2">출석부</a>
